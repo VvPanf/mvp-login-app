@@ -27,6 +27,11 @@ class LoginActivity : AppCompatActivity(), ILoginView {
         setListener()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        iLoginPresenter.destroy()
+    }
+
     private fun initPresenter() {
         iLoginPresenter = LoginPresenter(this)
     }
